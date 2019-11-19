@@ -28,7 +28,7 @@ $ kubectl get pods --namespace kube-system --kubeconfig="api/helm/kubeconfig.yam
 
 The Tiller pod name begins with the prefix tiller-deploy-.
 
-Now that we’ve installed both Helm components, we’re ready to use helm to install our first application.
+Now that we�ve installed both Helm components, we�re ready to use helm to install our first application.
 
 ## Setting up Kubernetes Dashboard
 Afhter we installed helm and tiller we can easyallty use both to install kubernets dashboard

@@ -70,7 +70,7 @@ In compliance with [vng.cloud](https://zaakgerichtwerken.vng.cloud/themas/achter
 Notifications
 -------
 @todo this needs to be implemented
-For notifications we do not use the current [ZGW standard](https://zaakgerichtwerken.vng.cloud/themas/achtergronddocumentatie/notificaties) since we deem it insecure to send properties or data objects along with a notification. This is a potential security breach explained [here](https://github.com/VNG-Realisatie/gemma-zaken/issues/1427#issuecomment-549272696).  It also doesn’t follow the [web standard](https://www.w3.org/TR/websub/). Instead we are developing our own subscriber service that is tailored for the NLX / VNG environment and based on current web standards [here]().
+For notifications we do not use the current [ZGW standard](https://zaakgerichtwerken.vng.cloud/themas/achtergronddocumentatie/notificaties) since we deem it insecure to send properties or data objects along with a notification. This is a potential security breach explained [here](https://github.com/VNG-Realisatie/gemma-zaken/issues/1427#issuecomment-549272696).  It also doesn�t follow the [web standard](https://www.w3.org/TR/websub/). Instead we are developing our own subscriber service that is tailored for the NLX / VNG environment and based on current web standards [here]().
 
 __solution__
 In compliance with [w3.org](https://www.w3.org/TR/websub/) each endpoint returns an header containing an subscribtion url. That can be used in acordanse with the application to subscribe to both individual objects as collections. whereby collections serve as 'kanalen'.
@@ -113,7 +113,7 @@ Comma Notation versus Bracket Notation on arrays's
 -------
 The NL API standard uses comma notation on array's in http requests. E.g. fields=id,name,description however common browsers(based on chromium e.g. chrome and edge) use bracket notation for query style array's e.g. fields[]=id&fields[]=name,&fields[]=description. The difference of course is obvious since comma notation doesn't allow you to index arrays. [Interestingly enough there isn't actually a rfc spec for this](https://stackoverflow.com/questions/15854017/what-rfc-defines-arrays-transmitted-over-http). 
 
-It is perceivable that in future iterations we would like to use indexed array in situations where the index of the array can't be assumed on basis of url notation, when indexes aren’t numerical, when we don’t want an index to start at 0 or when indexes are purpusly missing (comma notation of id,name,description would always refert to the equivalent of fields: [
+It is perceivable that in future iterations we would like to use indexed array in situations where the index of the array can't be assumed on basis of url notation, when indexes aren�t numerical, when we don�t want an index to start at 0 or when indexes are purpusly missing (comma notation of id,name,description would always refert to the equivalent of fields: [
   0 => id,
   1 => name,
   2 => description
