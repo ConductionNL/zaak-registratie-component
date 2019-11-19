@@ -8,6 +8,7 @@
 		"api-platform/api-pack": "^1.1",
 		"conduction/commongroundbundle": "dev-master",
 		"doctrine/doctrine-fixtures-bundle": "^3.2",
+		"doctrine/doctrine-migrations-bundle": "^2.1",
 		"guzzlehttp/guzzle": "^6.3",
 		"lexik/jwt-authentication-bundle": "^2.6",
 		"ramsey/uuid": "^3.8",
