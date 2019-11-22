@@ -52,7 +52,7 @@ class KlantContact
     private $id;
 
     /**
-	 * @var string $zaak the zaak which this KC belongs to.
+	 * @var \Ramsey\Uuid\UuidInterface $zaak the zaak which this KC belongs to.
 	 * 
 	 * @Assert\NotNull
      * @Gedmo\Versioned
@@ -113,13 +113,18 @@ class KlantContact
      * @var string $url the url of this KC.
 	 * 
      * @Assert\Length(
-     *      max = 255
+     *      max = 1000
      * )
      * @Gedmo\Versioned
 	 * @Groups({"read","write"})
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=1000)
      */
     private $url;
+
+    /**
+     * @ORM\Column(type="string", length=14, nullable=true)
+     */
+    private $identificatie;
 
     public function getId(): ?uuid
     {
@@ -200,6 +205,18 @@ class KlantContact
     public function setUrl(string $url): self
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getIdentificatie(): ?string
+    {
+        return $this->identificatie;
+    }
+
+    public function setIdentificatie(?string $identificatie): self
+    {
+        $this->identificatie = $identificatie;
 
         return $this;
     }

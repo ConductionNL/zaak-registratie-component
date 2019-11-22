@@ -2,26 +2,43 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+// use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use App\Entity\KlantContact;
 use App\Entity\Zaak;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
-class KlantContactController extends AbstractController
+class KlantContactController extends Controller
 {
     /**
-     * @Route("/klant/contact", name="klant_contact")
+     * @Route("/klantcontacten/{uuid}", methods={"GET"}, name="getklantcontact")
      */
-    public function index()
+    public function getKlantContact($uuid)
     {
-        return $this->render('klant_contact/index.html.twig', [
-            'controller_name' => 'KlantContactController',
-        ]);
+        $kc = $this->getDoctrine()
+            ->getRepository(KlantContact::class)
+            ->find($uuid);
+        if (!$kc) {
+            throw new BadRequestHttpException("KlantContact with id $uuid not found.");
+        }
+
+        $data = [
+            'url' => $kc->getUrl(),
+            'uuid' => $kc->getId(),
+            'zaak' => $kc->getZaak()->getUrl(),
+            'identificatie' => $kc->getIdentificatie(),
+            'datumtijd' => $kc->getDatumtijd(),
+            'kanaal' => $kc->getKanaal(),
+            'onderwerp' => $kc->getOnderwerp(),
+            'toelichting' => $kc->getToelichting(),
+        ];
+        return new JsonResponse($data);
     }
 
     /**
@@ -32,9 +49,19 @@ class KlantContactController extends AbstractController
         $klant_contacten = $this->getDoctrine()
             ->getRepository(KlantContact::class)
             ->findAll();
+        if (!$klant_contacten) {
+            throw new BadRequestHttpException("No KlantContacten found.");
+        }
 
-        
-        return $this->respondOk($klant_contacten);
+        $serializer = $this->container->get('jms_serializer');
+
+        $data = [
+            'count' => count($klant_contacten),
+            'next' => "http://example.com",
+            'previous' => "http://example.com",
+            'results' => $serializer->serialize($klant_contacten, 'json'),
+        ];
+        return new JsonResponse($data);
     }
 
     /**
@@ -49,25 +76,34 @@ class KlantContactController extends AbstractController
 
         $zaak = $doctrine->getRepository(Zaak::class)
             ->findOneBy(['url' => $params['zaak']]);
+        if (!$zaak) {
+            $url = $params['zaak'];
+            throw new BadRequestHttpException("Zaak with url $url not found.");
+        }
 
         $kc = new KlantContact();
         $kc->setZaak($zaak);
-        $kc->setUrl($params['url']);
-        $kc->setId(Uuid::fromString($params['identificatie']));
+        $kc->setUrl("http://example.com");
+        $kc->setIdentificatie(isset($params['identificatie']) ? $params['identificatie'] : null);
         $kc->setDatumtijd(new \DateTime($params['datumtijd']));
-        $kc->setKanaal($params['kanaal']);
-        $kc->setOnderwerp($params['onderwerp']);
-        $kc->setToelichting($params['toelichting']);
+        $kc->setKanaal(isset($params['kanaal']) ? $params['kanaal'] : null);
+        $kc->setOnderwerp(isset($params['onderwerp']) ? $params['onderwerp'] : null);
+        $kc->setToelichting(isset($params['toelichting']) ? $params['toelichting'] : null);
 
         $em->persist($kc);
         $em->flush();
-        dump($kc);
 
-        return $this->respondOk($kc);
-    }
+        $data = [
+            'url' => $kc->getUrl(),
+            'uuid' => $kc->getId(),
+            'zaak' => $zaak->getUrl(),
+            'identificatie' => $kc->getIdentificatie(),
+            'datumtijd' => $kc->getDatumtijd(),
+            'kanaal' => $kc->getKanaal(),
+            'onderwerp' => $kc->getOnderwerp(),
+            'toelichting' => $kc->getToelichting(),
+        ];
 
-    private function respondOk($data) {
-        $r = new JsonResponse($data);
-        return $r;
+        return new JsonResponse($data);
     }
 }

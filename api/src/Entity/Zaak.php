@@ -15,6 +15,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
 use App\Entity\Zaak;
 use Ramsey\Uuid\UuidInterface;
+use Ramsey\Uuid\Uuid;
 
 
 /**
@@ -82,9 +83,307 @@ class Zaak
     private $zaakobjecten;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string $url
+	 * 
+     * @Assert\NotNull
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=1000)
      */
     private $url;
+
+    /**
+     * @var string $bronorganisatie
+	 * 
+     * @Assert\NotNull
+     * @Assert\Length(
+     *      max = 9
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=9)
+     */
+    private $bronorganisatie;
+
+    /**
+     * @var string $omschrijving
+	 * 
+     * @Assert\Length(
+     *      max = 80
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=80, nullable=true)
+     */
+    private $omschrijving;
+
+    /**
+     * @var string $toelichting
+	 * 
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $toelichting;
+
+    /**
+     * @var string $zaak_type
+	 * 
+     * @Assert\NotNull
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=1000)
+     */
+    private $zaak_type;
+
+    /**
+     * @var string $registratie_datum
+	 * 
+     * @Assert\Date
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $registratie_datum;
+
+    /**
+     * @var string $verantwoordelijke_organisatie
+	 * 
+     * @Assert\NotNull
+     * @Assert\Length(
+     *      max = 9
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=9)
+     */
+    private $verantwoordelijke_organisatie;
+
+    /**
+     * @var string $start_datum
+	 * 
+     * @Assert\NotNull
+     * @Assert\Date
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="date")
+     */
+    private $start_datum;
+
+    /**
+     * @var string $einddatum_gepland
+	 * 
+     * @Assert\Date
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $einddatum_gepland;
+
+    /**
+     * @var string $uiterlijke_einddatum_afdoening
+	 * 
+     * @Assert\Date
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $uiterlijke_einddatum_afdoening;
+
+    /**
+     * @var string $publicatie_datum
+	 * 
+     * @Assert\Date
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $publicatie_datum;
+
+    /**
+     * @var string $communicatie_kanaal
+	 * 
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $communicatie_kanaal;
+
+    /**
+     * @var string $producten_of_diensten
+	 * 
+     * @Assert\Collection
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $producten_of_diensten = [];
+
+    /**
+     * @var string $vertrouwelijkheid_aanduiding
+	 * 
+     * @Assert\Length(
+     *      max = 255
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $vertrouwelijkheid_aanduiding;
+
+    /**
+     * @var string $betalingsindicatie
+	 * 
+     * @Assert\Length(
+     *      max = 255
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $betalingsindicatie;
+
+    /**
+     * @var string $laatste_betaaldatum
+	 * 
+     * @Assert\DateTime
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $laatste_betaaldatum;
+
+    /**
+     * @var string $zaak_geometrie
+	 * 
+     * @Assert\Collection
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="object", nullable=true)
+     */
+    private $zaak_geometrie;
+
+    /**
+     * @var string $velenging
+	 * 
+     * @Assert\Collection
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="object", nullable=true)
+     */
+    private $verlenging;
+
+    /**
+     * @var string $opschorting
+	 * 
+     * @Assert\Collection
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="object", nullable=true)
+     */
+    private $opschorting;
+
+    /**
+     * @var string $selectielijstklasse
+	 * 
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $selectielijstklasse;
+
+    /**
+     * @var string $hoofdzaak
+	 * 
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $hoofdzaak;
+
+    /**
+     * @var string $relevante_andere_zaken
+	 * 
+     * @Assert\Collection
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $relevante_andere_zaken = [];
+
+    /**
+     * @var string $kenmerken
+	 * 
+     * @Assert\Collection
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $kenmerken = [];
+
+    /**
+     * @var string $archief_nominatie
+	 * 
+     * @Assert\Length(
+     *      max = 255
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $archief_nominatie;
+
+    /**
+     * @var string $archief_status
+	 * 
+     * @Assert\Length(
+     *      max = 255
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $archief_status;
+
+    /**
+     * @var string $archief_actiedatum
+	 * 
+     * @Assert\Date
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $archief_actiedatum;
+
+    /**
+     * @var string $identificatie
+	 * 
+     * @Assert\Length(
+     *      max = 40
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=40, nullable=true)
+     */
+    private $identificatie;
 
     public function __construct()
     {
@@ -295,6 +594,318 @@ class Zaak
     public function setUrl(string $url): self
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getBronorganisatie(): ?string
+    {
+        return $this->bronorganisatie;
+    }
+
+    public function setBronorganisatie(string $bronorganisatie): self
+    {
+        $this->bronorganisatie = $bronorganisatie;
+
+        return $this;
+    }
+
+    public function getOmschrijving(): ?string
+    {
+        return $this->omschrijving;
+    }
+
+    public function setOmschrijving(?string $omschrijving): self
+    {
+        $this->omschrijving = $omschrijving;
+
+        return $this;
+    }
+
+    public function getToelichting(): ?string
+    {
+        return $this->toelichting;
+    }
+
+    public function setToelichting(?string $toelichting): self
+    {
+        $this->toelichting = $toelichting;
+
+        return $this;
+    }
+
+    public function getZaakType(): ?string
+    {
+        return $this->zaak_type;
+    }
+
+    public function setZaakType(string $zaak_type): self
+    {
+        $this->zaak_type = $zaak_type;
+
+        return $this;
+    }
+
+    public function getRegistratieDatum(): ?\DateTimeInterface
+    {
+        return $this->registratie_datum;
+    }
+
+    public function setRegistratieDatum(?\DateTimeInterface $registratie_datum): self
+    {
+        $this->registratie_datum = $registratie_datum;
+
+        return $this;
+    }
+
+    public function getVerantwoordelijkeOrganisatie(): ?string
+    {
+        return $this->verantwoordelijke_organisatie;
+    }
+
+    public function setVerantwoordelijkeOrganisatie(string $verantwoordelijke_organisatie): self
+    {
+        $this->verantwoordelijke_organisatie = $verantwoordelijke_organisatie;
+
+        return $this;
+    }
+
+    public function getStartDatum(): ?\DateTimeInterface
+    {
+        return $this->start_datum;
+    }
+
+    public function setStartDatum(\DateTimeInterface $start_datum): self
+    {
+        $this->start_datum = $start_datum;
+
+        return $this;
+    }
+
+    public function getEinddatumGepland(): ?\DateTimeInterface
+    {
+        return $this->einddatum_gepland;
+    }
+
+    public function setEinddatumGepland(?\DateTimeInterface $einddatum_gepland): self
+    {
+        $this->einddatum_gepland = $einddatum_gepland;
+
+        return $this;
+    }
+
+    public function getUiterlijkeEinddatumAfdoening(): ?\DateTimeInterface
+    {
+        return $this->uiterlijke_einddatum_afdoening;
+    }
+
+    public function setUiterlijkeEinddatumAfdoening(?\DateTimeInterface $uiterlijke_einddatum_afdoening): self
+    {
+        $this->uiterlijke_einddatum_afdoening = $uiterlijke_einddatum_afdoening;
+
+        return $this;
+    }
+
+    public function getPublicatieDatum(): ?\DateTimeInterface
+    {
+        return $this->publicatie_datum;
+    }
+
+    public function setPublicatieDatum(?\DateTimeInterface $publicatie_datum): self
+    {
+        $this->publicatie_datum = $publicatie_datum;
+
+        return $this;
+    }
+
+    public function getCommunicatieKanaal(): ?string
+    {
+        return $this->communicatie_kanaal;
+    }
+
+    public function setCommunicatieKanaal(?string $communicatie_kanaal): self
+    {
+        $this->communicatie_kanaal = $communicatie_kanaal;
+
+        return $this;
+    }
+
+    public function getProductenOfDiensten(): ?array
+    {
+        return $this->producten_of_diensten;
+    }
+
+    public function setProductenOfDiensten(?array $producten_of_diensten): self
+    {
+        $this->producten_of_diensten = $producten_of_diensten;
+
+        return $this;
+    }
+
+    public function getVertrouwelijkheidAanduiding(): ?string
+    {
+        return $this->vertrouwelijkheid_aanduiding;
+    }
+
+    public function setVertrouwelijkheidAanduiding(?string $vertrouwelijkheid_aanduiding): self
+    {
+        $this->vertrouwelijkheid_aanduiding = $vertrouwelijkheid_aanduiding;
+
+        return $this;
+    }
+
+    public function getBetalingsindicatie(): ?string
+    {
+        return $this->betalingsindicatie;
+    }
+
+    public function setBetalingsindicatie(?string $betalingsindicatie): self
+    {
+        $this->betalingsindicatie = $betalingsindicatie;
+
+        return $this;
+    }
+
+    public function getLaatsteBetaaldatum(): ?\DateTimeInterface
+    {
+        return $this->laatste_betaaldatum;
+    }
+
+    public function setLaatsteBetaaldatum(?\DateTimeInterface $laatste_betaaldatum): self
+    {
+        $this->laatste_betaaldatum = $laatste_betaaldatum;
+
+        return $this;
+    }
+
+    public function getZaakGeometrie()
+    {
+        return $this->zaak_geometrie;
+    }
+
+    public function setZaakGeometrie($zaak_geometrie): self
+    {
+        $this->zaak_geometrie = $zaak_geometrie;
+
+        return $this;
+    }
+
+    public function getVerlenging()
+    {
+        return $this->verlenging;
+    }
+
+    public function setVerlenging($verlenging): self
+    {
+        $this->verlenging = $verlenging;
+
+        return $this;
+    }
+
+    public function getOpschorting()
+    {
+        return $this->opschorting;
+    }
+
+    public function setOpschorting($opschorting): self
+    {
+        $this->opschorting = $opschorting;
+
+        return $this;
+    }
+
+    public function getSelectielijstklasse(): ?string
+    {
+        return $this->selectielijstklasse;
+    }
+
+    public function setSelectielijstklasse(?string $selectielijstklasse): self
+    {
+        $this->selectielijstklasse = $selectielijstklasse;
+
+        return $this;
+    }
+
+    public function getHoofdzaak(): ?string
+    {
+        return $this->hoofdzaak;
+    }
+
+    public function setHoofdzaak(?string $hoofdzaak): self
+    {
+        $this->hoofdzaak = $hoofdzaak;
+
+        return $this;
+    }
+
+    public function getRelevanteAndereZaken(): ?array
+    {
+        return $this->relevante_andere_zaken;
+    }
+
+    public function setRelevanteAndereZaken(?array $relevante_andere_zaken): self
+    {
+        $this->relevante_andere_zaken = $relevante_andere_zaken;
+
+        return $this;
+    }
+
+    public function getKenmerken(): ?array
+    {
+        return $this->kenmerken;
+    }
+
+    public function setKenmerken(?array $kenmerken): self
+    {
+        $this->kenmerken = $kenmerken;
+
+        return $this;
+    }
+
+    public function getArchiefNominatie(): ?string
+    {
+        return $this->archief_nominatie;
+    }
+
+    public function setArchiefNominatie(?string $archief_nominatie): self
+    {
+        $this->archief_nominatie = $archief_nominatie;
+
+        return $this;
+    }
+
+    public function getArchiefStatus(): ?string
+    {
+        return $this->archief_status;
+    }
+
+    public function setArchiefStatus(?string $archief_status): self
+    {
+        $this->archief_status = $archief_status;
+
+        return $this;
+    }
+
+    public function getArchiefActiedatum(): ?\DateTimeInterface
+    {
+        return $this->archief_actiedatum;
+    }
+
+    public function setArchiefActiedatum(?\DateTimeInterface $archief_actiedatum): self
+    {
+        $this->archief_actiedatum = $archief_actiedatum;
+
+        return $this;
+    }
+
+    public function getIdentificatie(): ?string
+    {
+        return $this->identificatie;
+    }
+
+    public function setIdentificatie(?string $identificatie): self
+    {
+        $this->identificatie = $identificatie;
 
         return $this;
     }
