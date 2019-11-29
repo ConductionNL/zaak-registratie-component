@@ -1206,42 +1206,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Resultaat'
+                  $ref: '#/components/schemas/Resultaat-read'
       parameters:
         -
           name: page
@@ -1328,28 +1328,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
           links:
             GetResultaatItem:
               parameters:
@@ -1364,28 +1364,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
         description: 'The new Resultaat resource'
       parameters:
         -
@@ -1503,28 +1503,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
         404:
           description: 'Resource not found'
     delete:
@@ -1620,28 +1620,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
         400:
           description: 'Invalid input'
         404:
@@ -1650,28 +1650,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
         description: 'The updated Resultaat resource'
     patch:
       tags:
@@ -1720,28 +1720,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Resultaat'
+                $ref: '#/components/schemas/Resultaat-read'
         400:
           description: 'Invalid input'
         404:
@@ -1750,28 +1750,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Resultaat'
+              $ref: '#/components/schemas/Resultaat-write'
         description: 'The updated Resultaat resource'
   /rols:
     get:
@@ -1787,42 +1787,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Rol'
+                  $ref: '#/components/schemas/Rol-read'
       parameters:
         -
           name: page
@@ -1909,28 +1909,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
           links:
             GetRolItem:
               parameters:
@@ -1945,28 +1945,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
         description: 'The new Rol resource'
       parameters:
         -
@@ -2084,28 +2084,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
         404:
           description: 'Resource not found'
     delete:
@@ -2201,28 +2201,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
         400:
           description: 'Invalid input'
         404:
@@ -2231,28 +2231,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
         description: 'The updated Rol resource'
     patch:
       tags:
@@ -2301,28 +2301,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Rol'
+                $ref: '#/components/schemas/Rol-read'
         400:
           description: 'Invalid input'
         404:
@@ -2331,29 +2331,610 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Rol'
+              $ref: '#/components/schemas/Rol-write'
         description: 'The updated Rol resource'
+  /statuses:
+    get:
+      tags:
+        - Status
+      operationId: getStatusCollection
+      summary: 'Retrieves the collection of Status resources.'
+      responses:
+        200:
+          description: 'Status collection response'
+          content:
+            application/hal+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+            application/vnd.api+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+            application/x-yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Status-read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          schema:
+            type: integer
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+    post:
+      tags:
+        - Status
+      operationId: postStatusCollection
+      summary: 'Creates a Status resource.'
+      responses:
+        201:
+          description: 'Status resource created'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+          links:
+            GetStatusItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getStatusItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /statuses/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+        description: 'The new Status resource'
+      parameters:
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+  '/statuses/{id}':
+    get:
+      tags:
+        - Status
+      operationId: getStatusItem
+      summary: 'Retrieves a Status resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+      responses:
+        200:
+          description: 'Status resource response'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Status
+      operationId: deleteStatusItem
+      summary: 'Removes the Status resource.'
+      responses:
+        204:
+          description: 'Status resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+    put:
+      tags:
+        - Status
+      operationId: putStatusItem
+      summary: 'Replaces the Status resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Status resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+        description: 'The updated Status resource'
+    patch:
+      tags:
+        - Status
+      operationId: patchStatusItem
+      summary: 'Updates the Status resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Status resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Status-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Status-write'
+        description: 'The updated Status resource'
   /zaak_informatie_objects:
     get:
       tags:
@@ -2368,42 +2949,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ZaakInformatieObject'
+                  $ref: '#/components/schemas/ZaakInformatieObject-read'
       parameters:
         -
           name: page
@@ -2490,28 +3071,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
           links:
             GetZaakInformatieObjectItem:
               parameters:
@@ -2526,28 +3107,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
         description: 'The new ZaakInformatieObject resource'
       parameters:
         -
@@ -2665,28 +3246,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
         404:
           description: 'Resource not found'
     delete:
@@ -2782,28 +3363,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
         400:
           description: 'Invalid input'
         404:
@@ -2812,28 +3393,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
         description: 'The updated ZaakInformatieObject resource'
     patch:
       tags:
@@ -2882,28 +3463,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/ZaakInformatieObject'
+                $ref: '#/components/schemas/ZaakInformatieObject-read'
         400:
           description: 'Invalid input'
         404:
@@ -2912,29 +3493,610 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/ZaakInformatieObject'
+              $ref: '#/components/schemas/ZaakInformatieObject-write'
         description: 'The updated ZaakInformatieObject resource'
+  /zaak_objects:
+    get:
+      tags:
+        - ZaakObject
+      operationId: getZaakObjectCollection
+      summary: 'Retrieves the collection of ZaakObject resources.'
+      responses:
+        200:
+          description: 'ZaakObject collection response'
+          content:
+            application/hal+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+            application/vnd.api+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+            application/x-yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZaakObject-read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          schema:
+            type: integer
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+    post:
+      tags:
+        - ZaakObject
+      operationId: postZaakObjectCollection
+      summary: 'Creates a ZaakObject resource.'
+      responses:
+        201:
+          description: 'ZaakObject resource created'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+          links:
+            GetZaakObjectItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getZaakObjectItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /zaak_objects/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+        description: 'The new ZaakObject resource'
+      parameters:
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+  '/zaak_objects/{id}':
+    get:
+      tags:
+        - ZaakObject
+      operationId: getZaakObjectItem
+      summary: 'Retrieves a ZaakObject resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+      responses:
+        200:
+          description: 'ZaakObject resource response'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - ZaakObject
+      operationId: deleteZaakObjectItem
+      summary: 'Removes the ZaakObject resource.'
+      responses:
+        204:
+          description: 'ZaakObject resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+    put:
+      tags:
+        - ZaakObject
+      operationId: putZaakObjectItem
+      summary: 'Replaces the ZaakObject resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'ZaakObject resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+        description: 'The updated ZaakObject resource'
+    patch:
+      tags:
+        - ZaakObject
+      operationId: patchZaakObjectItem
+      summary: 'Updates the ZaakObject resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'ZaakObject resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/ZaakObject-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/ZaakObject-write'
+        description: 'The updated ZaakObject resource'
   /zaaks:
     get:
       tags:
@@ -3600,24 +4762,77 @@ components:
         url:
           description: 'the url of this KC.'
           type: string
-    Resultaat:
+    Resultaat-read:
       type: object
       description: ''
       properties:
         id:
           readOnly: true
-          type: integer
-        zaak:
           type: string
-    Rol:
+        zaak:
+          description: 'the zaak which this KC belongs to.'
+          $ref: '#/components/schemas/Zaak-read'
+        toelichting:
+          type: string
+      required:
+        - zaak
+    Resultaat-write:
+      type: object
+      description: ''
+      required:
+        - zaak
+      properties:
+        zaak:
+          description: 'the zaak which this KC belongs to.'
+          $ref: '#/components/schemas/Zaak-write'
+        toelichting:
+          type: string
+    Rol-read:
       type: object
       description: ''
       properties:
         id:
           readOnly: true
-          type: integer
-        zaak:
           type: string
+        zaak:
+          description: 'the zaak which this rol belongs to.'
+          $ref: '#/components/schemas/Zaak-read'
+        betrokkene:
+          type: string
+      required:
+        - zaak
+    Rol-write:
+      type: object
+      description: ''
+      required:
+        - zaak
+      properties:
+        zaak:
+          description: 'the zaak which this rol belongs to.'
+          $ref: '#/components/schemas/Zaak-write'
+        betrokkene:
+          type: string
+    Status-read:
+      type: object
+      description: ''
+      properties:
+        id:
+          readOnly: true
+          type: string
+        zaak:
+          description: 'the zaak which this status belongs to.'
+          $ref: '#/components/schemas/Zaak-read'
+      required:
+        - zaak
+    Status-write:
+      type: object
+      description: ''
+      required:
+        - zaak
+      properties:
+        zaak:
+          description: 'the zaak which this status belongs to.'
+          $ref: '#/components/schemas/Zaak-write'
     Zaak-read:
       type: object
       description: ''
@@ -3625,17 +4840,123 @@ components:
         id:
           readOnly: true
           type: string
+        url:
+          type: string
+        bronorganisatie:
+          type: string
+        omschrijving:
+          type: string
+        toelichting:
+          type: string
+        betalingsindicatie:
+          type: string
+        verlenging:
+          type: string
+        opschorting:
+          type: string
+        selectielijstklasse:
+          type: string
+        hoofdzaak:
+          type: string
+        kenmerken:
+          type: array
+          items:
+            type: string
+        identificatie:
+          type: string
+      required:
+        - url
+        - bronorganisatie
     Zaak-write:
       type: object
       description: ''
-    ZaakInformatieObject:
+      required:
+        - url
+        - bronorganisatie
+      properties:
+        url:
+          type: string
+        bronorganisatie:
+          type: string
+        omschrijving:
+          type: string
+        toelichting:
+          type: string
+        betalingsindicatie:
+          type: string
+        verlenging:
+          type: string
+        opschorting:
+          type: string
+        selectielijstklasse:
+          type: string
+        hoofdzaak:
+          type: string
+        kenmerken:
+          type: array
+          items:
+            type: string
+        identificatie:
+          type: string
+    ZaakInformatieObject-read:
       type: object
       description: ''
       properties:
         id:
           readOnly: true
-          type: integer
+          type: string
         zaak:
+          description: 'the zaak which this ZIO belongs to.'
+          $ref: '#/components/schemas/Zaak-read'
+        titel:
+          type: string
+        beschrijving:
+          type: string
+      required:
+        - zaak
+    ZaakInformatieObject-write:
+      type: object
+      description: ''
+      required:
+        - zaak
+      properties:
+        zaak:
+          description: 'the zaak which this ZIO belongs to.'
+          $ref: '#/components/schemas/Zaak-write'
+        titel:
+          type: string
+        beschrijving:
+          type: string
+    ZaakObject-read:
+      type: object
+      description: ''
+      properties:
+        id:
+          readOnly: true
+          type: string
+        zaak:
+          description: 'the zaak which this ZO belongs to.'
+          $ref: '#/components/schemas/Zaak-read'
+        object:
+          type: string
+        object_type:
+          type: string
+      required:
+        - zaak
+        - object_type
+    ZaakObject-write:
+      type: object
+      description: ''
+      required:
+        - zaak
+        - object_type
+      properties:
+        zaak:
+          description: 'the zaak which this ZO belongs to.'
+          $ref: '#/components/schemas/Zaak-write'
+        object:
+          type: string
+        object_type:
           type: string
 host: irc.zaakonline.nl
 servers:

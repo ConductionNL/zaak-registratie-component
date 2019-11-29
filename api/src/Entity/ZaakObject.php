@@ -16,8 +16,24 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
- *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ *      normalizationContext={"groups"={"zaken.lezen"}, "enable_max_depth"=true},
+ *      denormalizationContext={"groups"={"zaken.aanmaken", "zaken.bijwerken"}, "enable_max_depth"=true},
+ *      collectionOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="zaakobjecten"
+ *          },
+ *          "post"={
+ *              "method"="POST",
+ *              "path"="zaakobjecten"
+ *          }
+ *      },
+ *      itemOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="zaakobjecten/{uuid}"
+ *          }
+ *      }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ZaakObjectRepository")
  * @Gedmo\Loggable
@@ -40,7 +56,7 @@ class ZaakObject
 	 * )
 	 *
 	 * @Assert\Uuid
-	 * @Groups({"read"})
+	 * @Groups({"zaken.lezen"})
 	 * @ORM\Id
 	 * @ORM\Column(type="uuid", unique=true)
 	 * @ORM\GeneratedValue(strategy="CUSTOM")
@@ -49,73 +65,84 @@ class ZaakObject
     private $id;
 
     /**
-     * @var \Ramsey\Uuid\UuidInterface $zaak the zaak which this ZO belongs to.
+     * @var \Ramsey\Uuid\UuidInterface $zaak The Zaak which this ZaakObject belongs to.
 	 * 
 	 * @Assert\NotNull
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken"})
      * @ORM\ManyToOne(targetEntity="App\Entity\Zaak", inversedBy="zaakobjecten")
      * @ORM\JoinColumn(nullable=false)
      */
     private $zaak;
 
     /**
-     * @var string $object
+     * @var string $object The object of this ZaakObject.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $object;
 
     /**
-     * @var string $betrokkene
+     * @var string $betrokkene The betrokkene of this ZaakObject.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 255
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken"})
      * @ORM\Column(type="string", length=255)
      */
     private $objectType;
 
     /**
-     * @var string $object_type_overige
+     * @var string $object_type_overige Additional information on the object type.
 	 * 
      * @Assert\Length(
      *      max = 100
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken"})
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $object_type_overige;
 
     /**
-     * @var string $relatie_omschrijving
+     * @var string $relatie_omschrijving The omschrijving of the relation.
 	 * 
      * @Assert\Length(
      *      max = 80
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken"})
      * @ORM\Column(type="string", length=80, nullable=true)
      */
     private $relatie_omschrijving;
 
     /**
-     * @var string $object_identificatie
+     * @var string $object_identificatie The object identifier.
 	 * 
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken"})
      * @ORM\Column(type="object", nullable=true)
      */
     private $object_identificatie;
+
+    /**
+     * @var string $url The url of this ZaakObject.
+	 * 
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken"})
+     * @ORM\Column(type="string", length=1000)
+     */
+    private $url;
 
     public function getId(): ?int
     {

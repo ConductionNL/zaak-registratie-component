@@ -17,14 +17,28 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
- *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ *      normalizationContext={"groups"={"zaken.lezen"}, "enable_max_depth"=true},
+ *      denormalizationContext={"groups"={"zaken.bijwerken"}, "enable_max_depth"=true},
+ *      collectionOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="/klantcontacten"
+ *          },
+ *          "post"={
+ *              "method"="POST",
+ *              "path"="/klantcontacten"
+ *          }
+ *      },
+ *      itemOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="/klantcontacten/{uuid}"
+ *          }
+ *      }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\KlantContactRepository")
  * @Gedmo\Loggable
  */
-// Not sure what to do with this:
-// @ApiFilter(LikeFilter::class, properties={"onderwerp","toelichting"})
 class KlantContact
 {
     /**
@@ -43,7 +57,7 @@ class KlantContact
 	 * )
 	 *
 	 * @Assert\Uuid
-	 * @Groups({"read"})
+	 * @Groups({"zaken.lezen"})
 	 * @ORM\Id
 	 * @ORM\Column(type="uuid", unique=true)
 	 * @ORM\GeneratedValue(strategy="CUSTOM")
@@ -52,76 +66,83 @@ class KlantContact
     private $id;
 
     /**
-	 * @var \Ramsey\Uuid\UuidInterface $zaak the zaak which this KC belongs to.
+	 * @var \Ramsey\Uuid\UuidInterface $zaak The Zaak which this Klantcontact belongs to.
 	 * 
 	 * @Assert\NotNull
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
-     * @ORM\ManyToOne(targetEntity="App\Entity\Zaak", inversedBy="klantcontacts")
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Zaak", inversedBy="klantcontacten")
      * @ORM\JoinColumn(nullable=false)
      */
     private $zaak;
 
     /**
-	 * @var string $datumtijd the datetime of this KC.
+	 * @var string $datumtijd The datetime of this Klantcontact.
 	 * 
 	 * @Assert\NotNull
      * @Assert\DateTime
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="datetime")
      */
     private $datumtijd;
 
     /**
-	 * @var string $kanaal the kanaal of this KC.
+	 * @var string $kanaal The kanaal of this Klantcontact.
 	 * 
      * @Assert\Length(
      *      max = 20
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $kanaal;
 
     /**
-     * @var string $onderwerp the onderwerp of this KC.
+     * @var string $onderwerp The onderwerp of this Klantcontact.
 	 * 
      * @Assert\Length(
      *      max = 200
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=200, nullable=true)
      */
     private $onderwerp;
 
     /**
-     * @var string $toelichting the toelichting of this KC.
+     * @var string $toelichting The toelichting of this Klantcontact.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $toelichting;
 
     /**
-     * @var string $url the url of this KC.
+     * @var string $url The url of this Klantcontact.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=1000)
      */
     private $url;
 
     /**
+     * @var string $url The identificatie of this Klantcontact.
+	 * 
+     * @Assert\Length(
+     *      max = 14
+     * )
+     * @Gedmo\Versioned
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=14, nullable=true)
      */
     private $identificatie;

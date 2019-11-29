@@ -143,9 +143,6 @@
             ".php_cs.dist"
         ]
     },
-    "gbprod/uuid-normalizer": {
-        "version": "v1.1.1"
-    },
     "gedmo/doctrine-extensions": {
         "version": "v2.4.37"
     },

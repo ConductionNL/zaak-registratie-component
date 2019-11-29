@@ -16,8 +16,28 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
- *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ *      normalizationContext={"groups"={"zaken.lezen"}, "enable_max_depth"=true},
+ *      denormalizationContext={"groups"={"zaken.bijwerken"}, "enable_max_depth"=true},
+ *      collectionOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="rollen"
+ *          },
+ *          "post"={
+ *              "method"="POST",
+ *              "path"="rollen"
+ *          }
+ *      },
+ *      itemOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="rollen/{uuid}"
+ *          },
+ *          "delete"={
+ *              "method"="DELETE",
+ *              "path"="rollen/{uuid}"
+ *          }
+ *      }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\RolRepository")
  * @Gedmo\Loggable
@@ -40,7 +60,7 @@ class Rol
 	 * )
 	 *
 	 * @Assert\Uuid
-	 * @Groups({"read"})
+	 * @Groups({"zaken.lezen"})
 	 * @ORM\Id
 	 * @ORM\Column(type="uuid", unique=true)
 	 * @ORM\GeneratedValue(strategy="CUSTOM")
@@ -49,89 +69,95 @@ class Rol
     private $id;
 
     /**
-     * @var \Ramsey\Uuid\UuidInterface $zaak the zaak which this rol belongs to.
+     * @var \Ramsey\Uuid\UuidInterface $zaak The Zaak which this Rol belongs to.
 	 * 
 	 * @Assert\NotNull
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\ManyToOne(targetEntity="App\Entity\Zaak", inversedBy="rollen")
      * @ORM\JoinColumn(nullable=false)
      */
     private $zaak;
 
     /**
-     * @var string $betrokkene
+     * @var string $betrokkene The betrokkene of this Rol.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $betrokkene;
 
     /**
-     * @var string $betrokkene_type.
+     * @var string $betrokkene_type The betrokkenetype of this Rol.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 255
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=255)
      */
     private $betrokkene_type;
 
     /**
-     * @var string $rol_type.
+     * @var string $rol_type The type of this Rol.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=1000)
      */
     private $rol_type;
 
     /**
-     * @var string $rol_toelichting.
+     * @var string $rol_toelichting The toelichting of this Rol.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=1000)
      */
     private $rol_toelichting;
 
     /**
-     * @var string $indicatie_machtiging.
+     * @var string $indicatie_machtiging The optional inidicatiemachtiging of this Rol.
 	 * 
      * @Assert\Length(
      *      max = 255
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $indicatie_machtiging;
 
     /**
-     * @var string $betrokkene_identificatie.
+     * @var string $betrokkene_identificatie The identification of the betrokkene of this Rol.
 	 * 
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="object", nullable=true)
      */
     private $betrokkene_identificatie;
 
     /**
+     * @var string $url The url of this Rol.
+	 * 
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Groups({"zaken.lezen","zaken.bijwerken"})
      * @ORM\Column(type="string", length=1000)
      */
     private $url;

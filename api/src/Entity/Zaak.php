@@ -20,8 +20,36 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
- *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ *      normalizationContext={"groups"={"zaken.lezen"}, "enable_max_depth"=true},
+ *      denormalizationContext={"groups"={"zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"}, "enable_max_depth"=true},
+ *      collectionOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="/zaken"
+ *          },
+ *          "post"={
+ *              "method"="POST",
+ *              "path"="/zaken"
+ *          }
+ *      },
+ *      itemOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="/zaken/{uuid}"
+ *          },
+ *          "put"={
+ *              "method"="PUT",
+ *              "path"="/zaken/{uuid}"
+ *          },
+ *          "patch"={
+ *              "method"="PATCH",
+ *              "path"="/zaken/{uuid}"
+ *          },
+ *          "delete"={
+ *              "method"="DELETE",
+ *              "path"="/zaken/{uuid}"
+ *          }
+ *      }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ZaakRepository")
  * @Gedmo\Loggable
@@ -44,7 +72,7 @@ class Zaak
 	 * )
 	 *
 	 * @Assert\Uuid
-	 * @Groups({"read"})
+	 * @Groups({"zaken.lezen"})
 	 * @ORM\Id
 	 * @ORM\Column(type="uuid", unique=true)
 	 * @ORM\GeneratedValue(strategy="CUSTOM")
@@ -83,304 +111,304 @@ class Zaak
     private $zaakobjecten;
 
     /**
-     * @var string $url
+     * @var string $url The url of this Zaak.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=1000)
      */
     private $url;
 
     /**
-     * @var string $bronorganisatie
+     * @var string $bronorganisatie The source organization of this Zaak.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 9
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=9)
      */
     private $bronorganisatie;
 
     /**
-     * @var string $omschrijving
+     * @var string $omschrijving The omschrijving of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 80
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=80, nullable=true)
      */
     private $omschrijving;
 
     /**
-     * @var string $toelichting
+     * @var string $toelichting The optional toelichting of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $toelichting;
 
     /**
-     * @var string $zaak_type
+     * @var string $zaak_type The type of this Zaak.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=1000)
      */
     private $zaak_type;
 
     /**
-     * @var string $registratie_datum
+     * @var string $registratie_datum The registration date of this Zaak.
 	 * 
      * @Assert\Date
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="date", nullable=true)
      */
     private $registratie_datum;
 
     /**
-     * @var string $verantwoordelijke_organisatie
+     * @var string $verantwoordelijke_organisatie The verantwoordelijke organisatie of this Zaak.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 9
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=9)
      */
     private $verantwoordelijke_organisatie;
 
     /**
-     * @var string $start_datum
+     * @var string $start_datum The start date of this Zaak.
 	 * 
      * @Assert\NotNull
      * @Assert\Date
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="date")
      */
     private $start_datum;
 
     /**
-     * @var string $einddatum_gepland
+     * @var string $einddatum_gepland The planned end-date of this Zaak.
 	 * 
      * @Assert\Date
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="date", nullable=true)
      */
     private $einddatum_gepland;
 
     /**
-     * @var string $uiterlijke_einddatum_afdoening
+     * @var string $uiterlijke_einddatum_afdoening The uiterlijke einddatum afdoening of this Zaak.
 	 * 
      * @Assert\Date
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="date", nullable=true)
      */
     private $uiterlijke_einddatum_afdoening;
 
     /**
-     * @var string $publicatie_datum
+     * @var string $publicatie_datum The publicatiedatum of this Zaak.
 	 * 
      * @Assert\Date
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="date", nullable=true)
      */
     private $publicatie_datum;
 
     /**
-     * @var string $communicatie_kanaal
+     * @var string $communicatie_kanaal The communicatiekanaal of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $communicatie_kanaal;
 
     /**
-     * @var string $producten_of_diensten
+     * @var string $producten_of_diensten The producten of diensten of this Zaak.
 	 * 
      * @Assert\Collection
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="array", nullable=true)
      */
     private $producten_of_diensten = [];
 
     /**
-     * @var string $vertrouwelijkheid_aanduiding
+     * @var string $vertrouwelijkheid_aanduiding The vertrouwelijkheid aanduiding of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 255
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $vertrouwelijkheid_aanduiding;
 
     /**
-     * @var string $betalingsindicatie
+     * @var string $betalingsindicatie The betalingsindicatie of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 255
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $betalingsindicatie;
 
     /**
-     * @var string $laatste_betaaldatum
+     * @var string $laatste_betaaldatum The laatste betaaldatum of this Zaak.
 	 * 
      * @Assert\DateTime
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $laatste_betaaldatum;
 
     /**
-     * @var string $zaak_geometrie
+     * @var string $zaak_geometrie The geometrie of this Zaak.
 	 * 
      * @Assert\Collection
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="object", nullable=true)
      */
     private $zaak_geometrie;
 
     /**
-     * @var string $velenging
+     * @var string $verlenging The verlenging of this Zaak.
 	 * 
      * @Assert\Collection
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="object", nullable=true)
      */
     private $verlenging;
 
     /**
-     * @var string $opschorting
+     * @var string $opschorting The opschorting of this Zaak.
 	 * 
      * @Assert\Collection
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="object", nullable=true)
      */
     private $opschorting;
 
     /**
-     * @var string $selectielijstklasse
+     * @var string $selectielijstklasse The selectielijstklasse of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $selectielijstklasse;
 
     /**
-     * @var string $hoofdzaak
+     * @var string $hoofdzaak The hoofdzaak of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $hoofdzaak;
 
     /**
-     * @var string $relevante_andere_zaken
+     * @var string $relevante_andere_zaken The relevante andere zaken of this Zaak.
 	 * 
      * @Assert\Collection
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="array", nullable=true)
      */
     private $relevante_andere_zaken = [];
 
     /**
-     * @var string $kenmerken
+     * @var string $kenmerken The kenmerken of this Zaak.
 	 * 
      * @Assert\Collection
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="array", nullable=true)
      */
     private $kenmerken = [];
 
     /**
-     * @var string $archief_nominatie
+     * @var string $archief_nominatie The archief nominatie of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 255
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $archief_nominatie;
 
     /**
-     * @var string $archief_status
+     * @var string $archief_status The archief status of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 255
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $archief_status;
 
     /**
-     * @var string $archief_actiedatum
+     * @var string $archief_actiedatum The archief actiedatum of this Zaak.
 	 * 
      * @Assert\Date
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="date", nullable=true)
      */
     private $archief_actiedatum;
 
     /**
-     * @var string $identificatie
+     * @var string $identificatie The identificatie of this Zaak.
 	 * 
      * @Assert\Length(
      *      max = 40
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.bijwerken", "zaken.geforceerd-bijwerken", "zaken.verwijderen"})
      * @ORM\Column(type="string", length=40, nullable=true)
      */
     private $identificatie;

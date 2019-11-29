@@ -16,8 +16,24 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
- *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ *      normalizationContext={"groups"={"zaken.lezen"}, "enable_max_depth"=true},
+ *      denormalizationContext={"groups"={"zaken.aanmaken", "zaken.statussen.toevoegen", "zaken.heropenen"}, "enable_max_depth"=true},
+ *      collectionOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="statussen"
+ *          },
+ *          "post"={
+ *              "method"="POST",
+ *              "path"="statussen"
+ *          }
+ *      },
+ *      itemOperations={
+ *          "get"={
+ *              "method"="GET",
+ *              "path"="statussen/{uuid}"
+ *          }
+ *      }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\StatusRepository")
  * @Gedmo\Loggable
@@ -40,7 +56,7 @@ class Status
 	 * )
 	 *
 	 * @Assert\Uuid
-	 * @Groups({"read"})
+	 * @Groups({"zaken.lezen"})
 	 * @ORM\Id
 	 * @ORM\Column(type="uuid", unique=true)
 	 * @ORM\GeneratedValue(strategy="CUSTOM")
@@ -49,53 +65,59 @@ class Status
     private $id;
 
     /**
-     * @var \Ramsey\Uuid\UuidInterface $zaak the zaak which this status belongs to.
+     * @var \Ramsey\Uuid\UuidInterface $zaak The Zaak which this Status belongs to.
 	 * 
 	 * @Assert\NotNull
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.statussen.toevoegen", "zaken.heropenen"})
      * @ORM\ManyToOne(targetEntity="App\Entity\Zaak", inversedBy="statusen")
      * @ORM\JoinColumn(nullable=false)
      */
     private $zaak;
 
     /**
-     * @var string $status_type.
+     * @var string $status_type The type of this Status.
 	 * 
      * @Assert\NotNull
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.statussen.toevoegen", "zaken.heropenen"})
      * @ORM\Column(type="string", length=1000)
      */
     private $status_type;
 
     /**
-     * @var string $datum_status_gezet.
+     * @var string $datum_status_gezet The date this Status was set.
 	 * 
      * @Assert\NotNull
      * @Assert\DateTime
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.statussen.toevoegen", "zaken.heropenen"})
      * @ORM\Column(type="datetime")
      */
     private $datum_status_gezet;
 
     /**
-     * @var string $status_toelichting.
+     * @var string $status_toelichting Option toelichting of this Status.
 	 * 
      * @Assert\Length(
      *      max = 1000
      * )
      * @Gedmo\Versioned
-	 * @Groups({"read","write"})
+	 * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.statussen.toevoegen", "zaken.heropenen"})
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $status_toelichting;
 
     /**
+     * @var string $url The url of this Status.
+	 * 
+     * @Assert\Length(
+     *      max = 1000
+     * )
+     * @Groups({"zaken.lezen", "zaken.aanmaken", "zaken.statussen.toevoegen", "zaken.heropenen"})
      * @ORM\Column(type="string", length=1000)
      */
     private $url;
